@@ -1,13 +1,14 @@
-var list = [];
-
 $(document).ready(function() {
   $('form#input').submit(function(event) {
     event.preventDefault();
     list = [];
+    $('li.temp').remove();
     userInput = $('input#number').val();
-    $('ul#result').append('<li>' + pingpong(userInput) + '</li'>;
+    pingpong(userInput);
   });
+});
 
+var list = [];
 var pingpong = function(input) {
   var number = parseInt(input);
   for (var i = 1; i <= number; i++) {
@@ -20,7 +21,8 @@ var pingpong = function(input) {
     } else {
       list.push(i);
     }
-
   }
-
-});
+  list.forEach(function(item) {
+    $('ul#result').append('<li class="temp">' + item + '</li>')
+  })
+};

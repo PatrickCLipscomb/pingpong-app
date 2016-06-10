@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+form {
+  text-align: center;
+}
+
+ul {
+  text-align: center;
+  display: inline-block;
+
+}
+
 #sideboard {
   float: left;
   background-color: orange
