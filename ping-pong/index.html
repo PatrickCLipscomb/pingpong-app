@@ -28,17 +28,27 @@
           <p class="white">
             Intro to Programming
           </p>
+          <h4 class="green">To be viewed in:</h4>
+          <p class="white">
+            Widescreen
+          </p>
     </div>
 
 <!-- Form Submit Button and Result -->
     <div class="container tpadding">
       <form id="input" class="form-group">
-        <label class="green" for="number">Enter a number you want pong-ping output for</label>
-        <input id="number" type="number">
-        <button type="submit" class="btn btn-success">Reveal</button>
-        <a data-toggle='modal' href='#modal'>Reveal (modal)</a>
+        <label class="green" for="number">Enter a number you want pong-ping output for:</label>
+        <input id="number" type="number" placeholder="Max of 480">
+        <div class="btn-group">
+          <button type="submit" class="btn btn-success">Reveal</button>
+          <form class='form-group' id='resetter'>
+            <button type="submit" class="btn btn-danger">Reset the Page <em>(broken)</em></button>
+          </form>
+          <!-- <a data-toggle='modal' href='#modal'>Reveal (modal)</a> -->
+        </div>
       </form>
       <div class="row">
+        <h2 id='hide'>Ping Pong games shouldn't last that long!</h2>
         <div class="col-md-2">
           <ul id="result1">
           </ul>

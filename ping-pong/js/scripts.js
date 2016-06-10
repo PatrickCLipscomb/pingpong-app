@@ -8,6 +8,8 @@ $(document).ready(function() {
     event.preventDefault();
     list = [];
     $('li.temp').remove();
+    $('ul').show();
+    $('#hide').hide();
     var userInput = $('input#number').val();
     pingpong(userInput);
     for (var i = 0; i < list.length; i += 1) {
@@ -36,6 +38,9 @@ $(document).ready(function() {
           $('ul#result11').append('<li class="temp">' + list[i] + '</li>');
       } else if ( i < 480 ) {
           $('ul#result12').append('<li class="temp">' + list[i] + '</li>');
+      } else {
+        $('#hide').show();
+        $('ul').hide();
       }
     }
   });
@@ -48,6 +53,7 @@ $(document).ready(function() {
     pingCounter = 0;
     pongCounter = 0;
     pingpongCounter = 0;
+    $('#answer').hide();
     var randomNumber = Math.floor(500 * Math.random());
     $('#randomn').text(randomNumber);
     pingpong(randomNumber);
@@ -71,7 +77,17 @@ $(document).ready(function() {
     $('li#ping').text("There are " + pingCounter + " pings.");
     $('li#pong').text("There are " + pongCounter + " pongs.");
     $('li#pingpong').text("There are " + pingpongCounter + " pingpongs.");
-  })
+  });
+  $('form#resetter').submit(function(event) {
+    event.preventDefault();
+    list = [];
+    pingCounter = 0;
+    pongCounter = 0;
+    pingpongCounter = 0;
+    $('li.temp').remove();
+    $('ul').hide();
+    $('#hide').hide();
+  });
 });
 
 var pingpong = function(input) {
