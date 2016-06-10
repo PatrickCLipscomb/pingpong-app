@@ -3,6 +3,10 @@
   background-color: silver;
 }
 
+#hidden {
+  display: none;
+}
+
 #answer {
   display: none;
   text-align: center;
