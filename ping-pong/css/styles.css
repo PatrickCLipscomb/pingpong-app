@@ -1,0 +1,27 @@
+#title {
+  text-align: center;
+}
+
+#sideboard {
+  float: left;
+  background-color: orange
+}
+
+.green {
+  color: green;
+  font-family: monospace;
+}
+
+.white {
+  color: white;
+  font-family: fantasy;
+}
+
+.blue {
+  color: blue;
+  font-family: fantasy;
+}
+
+.tpadding form {
+  padding-top: 30px;
+}
