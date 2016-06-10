@@ -1,3 +1,8 @@
+var list = [];
+var pingCounter = 0
+var pongCounter = 0
+var pingpongCounter = 0
+
 $(document).ready(function() {
   $('form#input').submit(function(event) {
     event.preventDefault();
@@ -5,6 +10,9 @@ $(document).ready(function() {
     $('li.temp').remove();
     var userInput = $('input#number').val();
     pingpong(userInput);
+    list.forEach(function(item) {
+      $('ul#result').append('<li class="temp">' + item + '</li>')
+    });
   });
 });
 
@@ -29,11 +37,10 @@ $(document).ready(function() {
   });
 });
 
-var list = [];
-var pingCounter = 0
-var pongCounter = 0
-var pingpongCounter = 0
 var pingpong = function(input) {
+  pingCounter = 0
+  pongCounter = 0
+  pingpongCounter = 0
   var number = parseInt(input);
   for (var i = 1; i <= number; i++) {
     if ( i % 15 === 0 ) {
@@ -49,7 +56,4 @@ var pingpong = function(input) {
       list.push(i);
     }
   }
-  list.forEach(function(item) {
-    $('ul#result').append('<li class="temp">' + item + '</li>')
-  })
 };
