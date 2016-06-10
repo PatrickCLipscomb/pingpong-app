@@ -66,7 +66,7 @@ $(document).ready(function() {
     var userInput3 = parseInt($('input#guess3').val());
     debugger;
     if ( userInput1 === pingCounter && userInput2 === pongCounter && userInput3 === pingpongCounter ) {
-      $('h2#guesser').text("Wow, great guess! You nailed it.")
+      $('h2#guesser').text("Wow, great job! You are like a human calculator.")
     } else {
       $('h2#guesser').text("Missed it, better luck next time brotato.")
     }
