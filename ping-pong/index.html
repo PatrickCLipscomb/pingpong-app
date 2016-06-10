@@ -21,7 +21,7 @@
             Patrick Lipscomb
           </p>
           <h4 class="green">GitHub Username/URL</h4>
-          <p class="blue">
+          <p class="white">
             PatrickCLipscomb
           </p>
           <h4 class="green">Level 1 Test for:</h4>
@@ -30,13 +30,36 @@
           </p>
     </div>
 
-<!-- Form Submit Button -->
+<!-- Form Submit Button and Result -->
     <div class="container tpadding">
       <form id="input" class="form-group">
         <label class="green" for="number">Enter a number you want pong-ping output for</label>
         <input id="number" type="number">
         <button type="submit" class="btn btn-success">Reveal</button>
+        <a data-toggle='modal' href='#modal'>Reveal (modal)</a>
       </form>
+      <ul id='result'>
+      </ul>
+    </div>
+
+<!-- Game Forms - Random Number Generator -->
+    <div class="container tpadding">
+      <form id="randInt" class="form-group">
+        <button type="submit" class="btn btn-success">This will generate a random number.</button>
+      </form>
+      <h4 id='randomn'></h4>
+
+<!-- Game Forms - User Guess Form -->
+      <form id="numberGuesser" class="form-group">
+        <label class="green" for="guess1">How many pings?</label>
+        <input id="guess1" type="number">
+        <label class="green" for="guess2">How many pongs?</label>
+        <input id="guess2" type="number">
+        <label class="green" for="guess3">How many ping-pongs?</label>
+        <input id="guess3" type="number">
+        <button type="submit" class="btn btn-success">Check your answer</button>
+      </form>
+      <h2 id="guesser"></h2>
     </div>
 
 <!-- Modal -->

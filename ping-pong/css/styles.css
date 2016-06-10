@@ -11,6 +11,10 @@ ul {
   display: inline-block;
 }
 
+#randomn {
+  text-align: center;
+}
+
 #orange {
   background-color: orange;
   float: left;
