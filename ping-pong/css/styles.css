@@ -9,12 +9,13 @@ form {
 ul {
   text-align: center;
   display: inline-block;
-
 }
 
-#sideboard {
+#orange {
+  background-color: orange;
   float: left;
-  background-color: orange
+  width: 300px;
+  padding-bottom: 50px;
 }
 
 .green {
