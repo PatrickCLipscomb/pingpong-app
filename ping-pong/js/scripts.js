@@ -1,8 +1,3 @@
-var list = [];
-var pingCounter = 0
-var pongCounter = 0
-var pingpongCounter = 0
-
 $(document).ready(function() {
   $('form#input').submit(function(event) {
     event.preventDefault();
@@ -12,41 +7,12 @@ $(document).ready(function() {
     $('#hide').hide();
     var userInput = $('input#number').val();
     pingpong(userInput);
-    for (var i = 0; i < list.length; i += 1) {
-      if ( i < 40 ) {
-          $('ul#result1').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 80 ) {
-          $('ul#result2').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 120 ) {
-          $('ul#result3').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 160 ) {
-          $('ul#result4').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 200 ) {
-          $('ul#result5').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 240 ) {
-          $('ul#result6').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 280 ) {
-          $('ul#result7').append('<li class="temp">' + list[i] + '</li>');
-          $('#hidden').show();
-      } else if ( i < 320 ) {
-          $('ul#result8').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 360 ) {
-          $('ul#result9').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 400 ) {
-          $('ul#result10').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 440 ) {
-          $('ul#result11').append('<li class="temp">' + list[i] + '</li>');
-      } else if ( i < 480 ) {
-          $('ul#result12').append('<li class="temp">' + list[i] + '</li>');
-      } else {
-        $('#hide').show();
-        $('ul').hide();
-      }
+    revealer(list);
+    if (list.length > 480) {
+      $('#hide').show();
+      $('ul').hide();
     }
   });
-});
-
-$(document).ready(function() {
   $('form#randInt').submit(function(event) {
     event.preventDefault();
     list = [];
@@ -89,6 +55,42 @@ $(document).ready(function() {
     $('#hide').hide();
   });
 });
+
+var list = [];
+var pingCounter = 0
+var pongCounter = 0
+var pingpongCounter = 0
+
+var revealer = function(list) {
+  for (var i = 0; i < list.length; i += 1) {
+    if ( i < 40 ) {
+        $('ul#result1').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 80 ) {
+        $('ul#result2').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 120 ) {
+        $('ul#result3').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 160 ) {
+        $('ul#result4').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 200 ) {
+        $('ul#result5').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 240 ) {
+        $('ul#result6').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 280 ) {
+        $('ul#result7').append('<li class="temp">' + list[i] + '</li>');
+        $('#hidden').show();
+    } else if ( i < 320 ) {
+        $('ul#result8').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 360 ) {
+        $('ul#result9').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 400 ) {
+        $('ul#result10').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 440 ) {
+        $('ul#result11').append('<li class="temp">' + list[i] + '</li>');
+    } else if ( i < 480 ) {
+        $('ul#result12').append('<li class="temp">' + list[i] + '</li>');
+    }
+  }
+}
 
 var pingpong = function(input) {
   pingCounter = 0;
